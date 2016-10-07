@@ -30,17 +30,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
         parsePokemonCSV()
-        initAudio()
+//        initAudio()
         
     }
     
     func initAudio(){
         
-        let path = Bundle.main.path(forResource: "music", ofType: "mp3")
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
         
         do {
             
-            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path!)!)
+            musicPlayer = try AVAudioPlayer(contentsOf: URL(string: path)!)
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = -1
             musicPlayer.play()
